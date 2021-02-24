@@ -7,4 +7,98 @@
     android:layout_height="match_parent"
     tools:context=".ui.timerreading.TimerReadingFragment">
 
+    <Chronometer
+        android:id="@+id/chronometerTimerReading"
+        android:layout_width="67dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="344dp"
+        android:textSize="28dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991"></Chronometer>
+
+    <EditText
+        android:visibility="invisible"
+        android:textSize="28dp"
+        android:id="@+id/plain_text_nameBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <EditText
+        android:id="@+id/plain_text_numberPages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="28dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/textView_nameBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Name of book"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/plain_text_nameBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891" />
+
+    <TextView
+        android:id="@+id/textView_numberPages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number of pages read for day"
+        android:textSize="28dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/plain_text_numberPages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_nameBook"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <Button
+        android:id="@+id/button_startTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="28dp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <Button
+        android:id="@+id/button_saveBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:textSize="28dp"
+        android:text="Save"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plain_text_numberPages"
+        app:layout_constraintVertical_bias="0.154" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
