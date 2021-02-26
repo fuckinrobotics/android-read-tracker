@@ -1,4 +1,4 @@
-package com.example.readtracker;
+package com.example.readtracker.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.readtracker.R;
 import com.example.readtracker.ui.graph.GraphFragment;
 import com.example.readtracker.ui.listbooks.ListBooksFragment;
 
@@ -61,3 +62,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return loadFragment(fragment);
     }
 }
+
+/*
+AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        AppDatabase.class, "database-name").build();
+You can then use the abstract methods from the AppDatabase to get an instance of the DAO. In turn, you can use the methods from the DAO instance to interact with the database:
+
+KOTLIN
+JAVA
+
+UserDao userDao = db.userDao();
+List<User> users = userDao.getAll();
+ */
