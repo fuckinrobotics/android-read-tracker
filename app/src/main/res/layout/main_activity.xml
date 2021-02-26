@@ -5,13 +5,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.readtracker.MainActivity">
+    tools:context="com.example.readtracker.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/timer_reading_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"/>
+        tools:context=".main.MainActivity"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
