@@ -21,10 +21,10 @@ public class BooksWorkingMethods {
                 .build();
     }
 
-    public void saveBook(String nameBook, int numberFinalReadPage, String readingDate){
+    public void saveBook(String nameBook, String numberFinalReadPage, String readingDate){
         Books inputBook = new Books();
         inputBook.bookName = nameBook;
-        inputBook.finalPage = numberFinalReadPage;
+        inputBook.finalPage =Integer.parseInt(numberFinalReadPage);
         inputBook.readingDate = readingDate;
         db.getBooksDao().insert(inputBook);
     }

@@ -16,9 +16,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.readtracker.R;
+import com.example.readtracker.app.ReadTrackerApp;
 import com.example.readtracker.viewmodel.timerreading.TimerReadingViewModel;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class TimerReadingFragment extends Fragment {
+    Date currentDate = new Date();
+    DateFormat dateFormat;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -30,6 +40,14 @@ public class TimerReadingFragment extends Fragment {
         TextView textViewNameBook = view.findViewById(R.id.textView_nameBook);
         TextView textViewNumberPages = view.findViewById(R.id.textView_numberPages);
         buttonSaveBook.setOnClickListener(v -> {
+            // Текущее время
+            // Форматирование времени как "день.месяц.год"
+            dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+            ExecutorService executorservice = Executors.newSingleThreadExecutor();
+            Runnable runnable = () -> {
+            ReadTrackerApp.getInstance().getRepo().saveBook((String) textViewNameBook.getText(),(String) textViewNumberPages.getText(), dateFormat.format(currentDate));
+            };
+            executorservice.submit(runnable);
             editNameBook.setVisibility(View.GONE);
             editNumberPages.setVisibility(View.GONE);
             textViewNameBook.setVisibility(View.GONE);
@@ -38,7 +56,7 @@ public class TimerReadingFragment extends Fragment {
             buttonStartTimer.setVisibility(View.VISIBLE);
         });
         Chronometer chronometerTimerReading = view.findViewById(R.id.chronometerTimerReading);
-chronometerTimerReading.setFormat("%s");
+        chronometerTimerReading.setFormat("%s");
 
         chronometerTimerReading.setOnClickListener(v -> {
             editNameBook.setVisibility(View.VISIBLE);
